@@ -1,7 +1,7 @@
 ask = input("Do you want to send a parcel? ")
 price = 0
-while ask == "y":
-    if ask == "y":
+if ask == "y":
+    while ask == "y":
         distance = int(input("Enter: "))
         if distance >= 5 and distance <= 50:
             print(f"The price is 10 Baht")
@@ -21,7 +21,7 @@ while ask == "y":
         else:
             print(f"The distance is too short!")
         ask = input("Do you want to send more parcel? ")
-    elif ask == "n":
-        print(f"The total price is: {price}")
+else:
+    print(f"The total price is: {price}")#edit here
 
-    #not done
+#not done

@@ -15,3 +15,5 @@ if distance >= 5:
         print("The price is 45 baht.")
 else:
     print("The distance is too short.")
+
+#done

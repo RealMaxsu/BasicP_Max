@@ -11,3 +11,5 @@ elif distance > 500:
     print("The price is 45 Baht")
 else:
     print("The distance is too short!")
+
+#done
