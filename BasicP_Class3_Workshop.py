@@ -1,8 +1,8 @@
-bossVava = 100
+bossVava = 20
 
-dragSlay = 30
+dragSlay = 5
 lightSaber = 15
-badRacket = 99
+badRacket = 30
 
 for x in range(2):
     if x == 0:
@@ -12,43 +12,45 @@ for x in range(2):
             timeAtk = int(input("How many times you want to attack?\nEnter your action: "))
             for y in range(timeAtk):
                 if y <= timeAtk:
-                    weapon = input("What weapon do you want to use?\nEnter weapon of your choice: ")
-                    if weapon == dragSlay:
-                        bossVava -= 30
-                        if bossVava > 0:
-                            print(f"You have {y} more attack!")
-                            continue
-                        else:
+                    weapon = int(input("What weapon do you want to use?\nWeapons that you can choose:\n1 for Dragon Slayer\n2 for Light Saber\n3 for Badminton Racket\nEnter weapon of your choice: "))
+                    if weapon == 1:
+                        bossVava -= dragSlay
+                        if bossVava == 0:
                             print(f"Congratulation! You slayed P'Vava")
-                    elif weapon == lightSaber:
-                        bossVava -= 15
-                        if bossVava > 0:
-                            print(f"You have {y} more attack!")
-                            continue
+                            break
                         else:
-                            print(f"Congratulation! You slayed P'Vava")
-                    elif weapon == badRacket:
-                        bossVava -= 99
-                        if bossVava > 0:
-                            print(f"You have {y} more attack!")
+                            bossVava += 20
+                            print(f"P'Vava still survive!\nP'Vava got 20 more HP.\nNow P'Vava has {bossVava} HP.")
                             continue
-                        else:
+                    elif weapon == 2:
+                        bossVava -= lightSaber
+                        if bossVava == 0:
                             print(f"Congratulation! You slayed P'Vava")
+                            break
+                        else:
+                            bossVava += 20
+                            print(f"P'Vava still survive!\nP'Vava got 20 more HP.\nNow P'Vava has {bossVava} HP.")
+                            continue
+                    elif weapon == 3:
+                        bossVava -= badRacket
+                        if bossVava == 0:
+                            print(f"Congratulation! You slayed P'Vava")
+                            break
+                        else:
+                            bossVava += 20
+                            print(f"P'Vava still survive!\nP'Vava got 20 more HP.\nNow P'Vava has {bossVava} HP.")
+                            continue
                     else:
-                        print("This weapon isn't available.")
-                        y += 1
-                        print(f"You have {y} more attack!")
+                        print("Please select other number: ")
+                        y -= 1
                         continue
                 else:
                     print(f"P'Vava still survive with {bossVava} HP.\nYou are out of attack!")
                     break
         elif action == 2:
+            print("You fled!")
             break
     elif x == 1:
         break
 
-#Can simplify
-#1.1 Make weapons in {}, use "if weapon in weapons:" and "bossVava -= weapons[weapon]""
-#Make bosses in {}, use bosses{boss(or other variable)}
-#Maybe delete {y}
-#not done
+#done
